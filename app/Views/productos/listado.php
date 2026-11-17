@@ -6,35 +6,35 @@
 
     <div class="card mb-4">
         <div class="table-responsive p-3">
-        <table id="tabla" class="table table-hover align-middle mb-0 w-100">
-        <thead class="table-light">
-            <tr>
-                <th>Id</th>
-                <th>Categoría</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Precio</th>
-                <th>Disponible</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($productos as $producto) { ?>
-                <tr>
-                    <td><?php echo $producto['id']; ?></td>
-                    <td><?php echo esc($producto['categoria']); ?></td>
-                    <td><?php echo esc($producto['nombre']); ?></td>
-                    <td><?php echo esc($producto['descripcion']); ?></td>
-                    <td>$<?php echo number_format($producto['precio'], 2, ',', '.'); ?></td>
-                    <td><span class="badge <?php echo $producto['disponible'] == 1 ? 'bg-success' : 'bg-secondary'; ?>"><?php echo $producto['disponible'] == 1 ? 'Sí' : 'No'; ?></span></td>
-                    <td>
-                        <a href="<?php echo base_url('productos/editar/' . $producto['id']); ?>" class="btn btn-soft-secondary btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">edit</span>Editar</a>
-                        <a href="<?php echo base_url('productos/eliminar/' . $producto['id']); ?>" class="btn btn-soft-danger btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">delete</span>Borrar</a>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            <table id="tabla" class="table table-hover align-middle mb-0 w-100">
+                <thead class="table-light">
+                    <tr>
+                        <th>Id</th>
+                        <th>Categoría</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Disponible</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($productos as $producto) { ?>
+                        <tr>
+                            <td><?php echo $producto['id']; ?></td>
+                            <td><?php echo esc($producto['categoria']); ?></td>
+                            <td><?php echo esc($producto['nombre']); ?></td>
+                            <td><?php echo esc($producto['descripcion']); ?></td>
+                            <td>$<?php echo number_format($producto['precio'], 2, ',', '.'); ?></td>
+                            <td><span class="badge <?php echo $producto['disponible'] == 1 ? 'bg-success' : 'bg-secondary'; ?>"><?php echo $producto['disponible'] == 1 ? 'Sí' : 'No'; ?></span></td>
+                            <td>
+                                <a href="<?php echo base_url('productos/editar/' . $producto['id']); ?>" class="btn btn-soft-secondary btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">edit</span>Editar</a>
+                                <a href="<?php echo base_url('productos/eliminar/' . $producto['id']); ?>" class="btn btn-soft-danger btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">delete</span>Borrar</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

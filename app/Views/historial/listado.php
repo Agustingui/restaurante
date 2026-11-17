@@ -3,34 +3,34 @@
 
     <div class="card mb-4">
         <div class="table-responsive p-3">
-        <table id="tabla" class="table table-hover align-middle mb-0 w-100">
-        <thead class="table-light">
-            <tr>
-                <th>Comanda</th>
-                <th>Pedido</th>
-                <th>Mesa</th>
-                <th>Mozo</th>
-                <th>Estado</th>
-                <th>Fecha</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($comandas as $comanda) { ?>
-                <tr>
-                    <td><?php echo $comanda['id']; ?></td>
-                    <td><?php echo $comanda['id_pedido']; ?></td>
-                    <td><?php echo $comanda['mesa']; ?></td>
-                    <td><?php echo esc($comanda['mozo']); ?></td>
-                    <td><?php echo str_replace('_', ' ', $comanda['estado']); ?></td>
-                    <td><?php echo $comanda['fecha_creacion']; ?></td>
-                    <td>
-                        <a href="<?php echo base_url('historial/ver/' . $comanda['id']); ?>" class="btn btn-soft-secondary btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">history</span>Ver historial</a>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            <table id="tabla" class="table table-hover align-middle mb-0 w-100">
+                <thead class="table-light">
+                    <tr>
+                        <th>Comanda</th>
+                        <th>Pedido</th>
+                        <th>Mesa</th>
+                        <th>Mozo</th>
+                        <th>Estado</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($comandas as $comanda) { ?>
+                        <tr>
+                            <td><?php echo $comanda['id']; ?></td>
+                            <td><?php echo $comanda['id_pedido']; ?></td>
+                            <td><?php echo $comanda['mesa']; ?></td>
+                            <td><?php echo esc($comanda['mozo']); ?></td>
+                            <td><?php echo str_replace('_', ' ', $comanda['estado']); ?></td>
+                            <td><?php echo $comanda['fecha_creacion']; ?></td>
+                            <td>
+                                <a href="<?php echo base_url('historial/ver/' . $comanda['id']); ?>" class="btn btn-soft-secondary btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">history</span>Ver historial</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

@@ -3,32 +3,32 @@
 
     <div class="card mb-4">
         <div class="table-responsive p-3">
-        <table id="tabla" class="table table-hover align-middle mb-0 w-100">
-        <thead class="table-light">
-            <tr>
-                <th>Fecha y hora</th>
-                <th>Usuario</th>
-                <th>Entidad</th>
-                <th>Registro</th>
-                <th>Acción</th>
-                <th>Datos anteriores</th>
-                <th>Datos nuevos</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($registros as $registro) { ?>
-                <tr>
-                    <td><?php echo $registro['fecha_hora']; ?></td>
-                    <td><?php echo esc($registro['username']); ?></td>
-                    <td><?php echo esc($registro['entidad']); ?></td>
-                    <td><?php echo $registro['id_registro']; ?></td>
-                    <td><?php echo $registro['accion']; ?></td>
-                    <td><code><?php echo esc($registro['datos_anteriores']); ?></code></td>
-                    <td><code><?php echo esc($registro['datos_nuevos']); ?></code></td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            <table id="tabla" class="table table-hover align-middle mb-0 w-100">
+                <thead class="table-light">
+                    <tr>
+                        <th>Fecha y hora</th>
+                        <th>Usuario</th>
+                        <th>Entidad</th>
+                        <th>Registro</th>
+                        <th>Acción</th>
+                        <th>Datos anteriores</th>
+                        <th>Datos nuevos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($registros as $registro) { ?>
+                        <tr>
+                            <td><?php echo $registro['fecha_hora']; ?></td>
+                            <td><?php echo esc($registro['username']); ?></td>
+                            <td><?php echo esc($registro['entidad']); ?></td>
+                            <td><?php echo $registro['id_registro']; ?></td>
+                            <td><?php echo $registro['accion']; ?></td>
+                            <td><code><?php echo esc($registro['datos_anteriores']); ?></code></td>
+                            <td><code><?php echo esc($registro['datos_nuevos']); ?></code></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

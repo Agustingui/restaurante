@@ -6,29 +6,29 @@
 
     <div class="card mb-4">
         <div class="table-responsive p-3">
-        <table id="tabla" class="table table-hover align-middle mb-0 w-100">
-        <thead class="table-light">
-            <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Descripción</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($categorias as $categoria) { ?>
-                <tr>
-                    <td><?php echo $categoria['id']; ?></td>
-                    <td><?php echo esc($categoria['nombre']); ?></td>
-                    <td><?php echo esc($categoria['descripcion']); ?></td>
-                    <td>
-                        <a href="<?php echo base_url('categorias/editar/' . $categoria['id']); ?>" class="btn btn-soft-secondary btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">edit</span>Editar</a>
-                        <a href="<?php echo base_url('categorias/eliminar/' . $categoria['id']); ?>" class="btn btn-soft-danger btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">delete</span>Borrar</a>
-                    </td>
-                </tr>
-            <?php } ?>
-        </tbody>
-    </table>
+            <table id="tabla" class="table table-hover align-middle mb-0 w-100">
+                <thead class="table-light">
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($categorias as $categoria) { ?>
+                        <tr>
+                            <td><?php echo $categoria['id']; ?></td>
+                            <td><?php echo esc($categoria['nombre']); ?></td>
+                            <td><?php echo esc($categoria['descripcion']); ?></td>
+                            <td>
+                                <a href="<?php echo base_url('categorias/editar/' . $categoria['id']); ?>" class="btn btn-soft-secondary btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">edit</span>Editar</a>
+                                <a href="<?php echo base_url('categorias/eliminar/' . $categoria['id']); ?>" class="btn btn-soft-danger btn-sm d-inline-flex align-items-center gap-1"><span class="material-symbols-outlined">delete</span>Borrar</a>
+                            </td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

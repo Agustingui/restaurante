@@ -1,5 +1,6 @@
 <div>
     <h3 class="mb-3"><?php echo $titulo; ?></h3>
+
     <div class="row justify-content-center">
         <div class="col-md-8 col-lg-6">
             <div class="card">
