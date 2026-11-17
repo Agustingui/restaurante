@@ -5,7 +5,7 @@ $seccion = service('uri')->getSegment(1);
 if ($rol == 'Administrador') {
     $menu = [
         'Gestión' => [['usuarios', 'Usuarios', 'group'], ['mesas', 'Mesas', 'table_restaurant'], ['categorias', 'Categorías', 'category'], ['productos', 'Productos', 'lunch_dining']],
-        'Registros' => [['historial', 'Comandas', 'receipt_long'], ['auditoria', 'Auditoría', 'fact_check']]
+        'Registros' => [['historial', 'Comandas', 'receipt_long'], ['reportes', 'Reportes', 'bar_chart'], ['auditoria', 'Auditoría', 'fact_check']]
     ];
 } elseif ($rol == 'Mozo') {
     $menu = ['Salón' => [['mozo', 'Mesas', 'table_restaurant']]];

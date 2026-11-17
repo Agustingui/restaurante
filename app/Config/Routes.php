@@ -50,6 +50,9 @@ $routes->group('', ['filter' => 'permiso:Administrador'], function ($routes) {
 
     // Auditoría
     $routes->get('auditoria', 'Auditoria::index');
+
+    // Reporte de ventas
+    $routes->get('reportes', 'Reportes::index', ['filter' => 'permiso:Administrador']);
 });
 
 // Panel del mozo
