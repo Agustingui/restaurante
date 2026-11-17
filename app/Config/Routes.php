@@ -70,3 +70,8 @@ $routes->group('cocina', ['filter' => 'permiso:Cocina'], function ($routes) {
     $routes->post('cambiarestado', 'Cocina::cambiarestado');
 });
 
+// Historial de comandas
+$routes->group('historial', ['filter' => 'permiso:Administrador,Cocina'], function ($routes) {
+    $routes->get('/', 'Historial::index');
+    $routes->get('ver/(:num)', 'Historial::ver/$1');
+});
