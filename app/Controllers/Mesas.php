@@ -11,6 +11,7 @@ class Mesas extends BaseController
     protected $pedidos;
 
     protected $reglas = [
+        'id'        => 'permit_empty|is_natural_no_zero',
         'numero'    => 'required|is_natural_no_zero|is_unique[mesas.numero,id,{id}]',
         'capacidad' => 'required|is_natural_no_zero|less_than[100]'
     ];

@@ -11,7 +11,7 @@ class Categorias extends BaseController
     protected $productos;
 
     protected $reglas = [
-        'nombre'      => 'required|max_length[50]|is_unique[categorias.nombre,id,{id}]',
+        'nombre' => 'required|max_length[50]|is_unique[categorias.nombre]',
         'descripcion' => 'permit_empty|max_length[150]'
     ];
 
@@ -100,7 +100,10 @@ class Categorias extends BaseController
 
         $datos = $this->request->getPost(['id', 'nombre', 'descripcion']);
 
-        if (!$this->validate($this->reglas, $this->mensajes)) {
+        $reglas = $this->reglas;
+        $reglas['nombre'] = 'required|max_length[50]|is_unique[categorias.nombre,id,' . $id . ']';
+
+        if (!$this->validate($reglas, $this->mensajes)) {
             return redirect()->back()->withInput()->with('errores', $this->validator->getErrors());
         }
 

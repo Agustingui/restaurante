@@ -14,7 +14,7 @@ class Usuarios extends BaseController
         'id_rol'   => 'required|is_natural_no_zero',
         'nombre'   => 'required|max_length[60]',
         'apellido' => 'required|max_length[60]',
-        'username' => 'required|min_length[3]|max_length[40]|is_unique[usuarios.username,id,{id}]'
+        'username' => 'required|min_length[3]|max_length[40]|is_unique[usuarios.username]'
     ];
 
     protected $mensajes = [
@@ -129,6 +129,7 @@ class Usuarios extends BaseController
         $datos = $this->request->getPost(['id', 'id_rol', 'nombre', 'apellido', 'username']);
 
         $reglas = $this->reglas;
+        $reglas['username'] = 'required|min_length[3]|max_length[40]|is_unique[usuarios.username,id,' . $id . ']';
         $reglas['password'] = 'permit_empty|min_length[6]';
 
         if (!$this->validate($reglas, $this->mensajes)) {
