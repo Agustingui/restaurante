@@ -63,3 +63,10 @@ $routes->group('mozo', ['filter' => 'permiso:Mozo'], function ($routes) {
     $routes->post('cerrar', 'Mozo::cerrar');
 });
 
+// Panel de cocina
+$routes->group('cocina', ['filter' => 'permiso:Cocina'], function ($routes) {
+    $routes->get('/', 'Cocina::index');
+    $routes->get('listar', 'Cocina::listar');
+    $routes->post('cambiarestado', 'Cocina::cambiarestado');
+});
+
