@@ -12,7 +12,14 @@ $routes->get('inicio', 'Login::inicio', ['filter' => 'permiso']);
 
 // Panel de Administrador
 $routes->group('', ['filter' => 'permiso:Administrador'], function ($routes) {
-    
+    // Usuarios
+    $routes->get('usuarios', 'Usuarios::index');
+    $routes->get('usuarios/nuevo', 'Usuarios::nuevo');
+    $routes->post('usuarios/insertar', 'Usuarios::insertar');
+    $routes->get('usuarios/editar/(:num)', 'Usuarios::editar/$1');
+    $routes->post('usuarios/actualizar', 'Usuarios::actualizar');
+    $routes->get('usuarios/eliminar/(:num)', 'Usuarios::eliminar/$1');
+    $routes->post('usuarios/borrar/(:num)', 'Usuarios::borrar/$1');
 
     // Mesas
     $routes->get('mesas', 'Mesas::index');
