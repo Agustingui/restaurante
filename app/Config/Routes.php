@@ -39,6 +39,27 @@ $routes->group('', ['filter' => 'permiso:Administrador'], function ($routes) {
     $routes->get('categorias/eliminar/(:num)', 'Categorias::eliminar/$1');
     $routes->post('categorias/borrar/(:num)', 'Categorias::borrar/$1');
 
+    // Productos
+    $routes->get('productos', 'Productos::index');
+    $routes->get('productos/nuevo', 'Productos::nuevo');
+    $routes->post('productos/insertar', 'Productos::insertar');
+    $routes->get('productos/editar/(:num)', 'Productos::editar/$1');
+    $routes->post('productos/actualizar', 'Productos::actualizar');
+    $routes->get('productos/eliminar/(:num)', 'Productos::eliminar/$1');
+    $routes->post('productos/borrar/(:num)', 'Productos::borrar/$1');
+
     
+});
+
+// Panel del mozo
+$routes->group('mozo', ['filter' => 'permiso:Mozo'], function ($routes) {
+    $routes->get('/', 'Mozo::index');
+    $routes->get('mesa/(:num)', 'Mozo::mesa/$1');
+    $routes->get('avisos', 'Mozo::avisos');
+    $routes->post('abrir', 'Mozo::abrir');
+    $routes->post('enviar', 'Mozo::enviar');
+    $routes->post('entregar/(:num)', 'Mozo::entregar/$1');
+    $routes->post('cancelarcomanda/(:num)', 'Mozo::cancelarcomanda/$1');
+    $routes->post('cerrar', 'Mozo::cerrar');
 });
 
