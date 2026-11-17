@@ -48,7 +48,8 @@ $routes->group('', ['filter' => 'permiso:Administrador'], function ($routes) {
     $routes->get('productos/eliminar/(:num)', 'Productos::eliminar/$1');
     $routes->post('productos/borrar/(:num)', 'Productos::borrar/$1');
 
-    
+    // Auditoría
+    $routes->get('auditoria', 'Auditoria::index');
 });
 
 // Panel del mozo
